@@ -5,8 +5,6 @@ import {
     View,
     Image,
     Dimensions,
-    ScrollView,
-    FlatList,
     TouchableOpacity,
     TextInput
 } from 'react-native';
@@ -23,7 +21,7 @@ export default class Post extends React.Component {
     }
 
     carregaIcone(likeada) {
-        return likeada ? require('./icons/heart.png') : require('./icons/heart-flat.png');
+        return likeada ? require('../icons/heart.png') : require('../icons/heart-flat.png');
     }
 
     like() {
@@ -95,9 +93,9 @@ export default class Post extends React.Component {
         const {foto} = this.state;
 
         return (
-            <View style={{borderBottomWidth: 1, borderBottomColor: '#DDD'}}>
+            <View style={{borderBottomWidth: 1, borderBottomColor: '#DDD' }}>
 
-                <View style={{margin: 10, flexDirection: 'row', alignItems: 'center'}}>
+                <View style={{margin: 10, flexDirection: 'row', alignItems: 'center' }}>
 
                     <Image source={{uri: this.props.foto.urlPerfil}}
                            style={{marginRight: 10, width: 40, height: 40, borderRadius: 20}}/>
@@ -133,7 +131,7 @@ export default class Post extends React.Component {
                             style={styles.input} placeholder="Adicione um comentario..."/>
 
                         <TouchableOpacity onPress={this.coment.bind(this)}>
-                            <Image style={styles.iconComentario} source={require('./icons/send.png')}/>
+                            <Image style={styles.iconComentario} source={require('../icons/send.png')}/>
                         </TouchableOpacity>
                     </View>
 
